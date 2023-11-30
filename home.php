@@ -31,10 +31,9 @@
         }
 </style>
 <body class="flex flex-col items-center justify-between min-h-screen bg-gray-100">
-    <div class="flex flex-col items-center justify-center">
+    <div class="flex flex-col items-center justify-center relative z-10">
         <h1 class="text-3xl font-bold mb-4">Welcome Bookworm!</h1>
         <a href="book_manager.php" class="text-blue-500 hover:text-blue-700">Book Manager</a>
-        <br>
         <p class="box-border p-5 shadow-md border border-black">
             Welcome to BookWorm, your digital gateway to a world of books! 📚 Dive into an immersive interface connecting you with a 
             vast database of literary treasures. Explore, discover, and manage your reading journey effortlessly. 
@@ -44,6 +43,6 @@
         </p>
         <img src="bookWorm.png" alt="Book Worm" class="w-32 h-32 mt-4 animate-wiggle">
     </div>
-    <img src="grass.png" alt="grass" style="width: 100%; position: fixed; bottom: 0; left: 0;">
+    <img src="grass.png" alt="grass" style="width: 100%; position: fixed; bottom: 0; left: 0; z-index: -1;">
 </body>
 </html>
