@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
       <link rel="stylesheet" href="styles.css">
+      <link rel="tailwindstyle" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 
 </head>
 <style>
@@ -17,6 +18,17 @@
     {
         background: dark green;
     } */
+    @keyframes wiggle {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .animate-wiggle {
+            animation: wiggle 1s ease-in-out infinite;
+        }
 </style>
 <body>
     <h1>Welcome Bookworm!</h1>
@@ -28,6 +40,6 @@ vast database of literary treasures. Explore, discover, and manage your reading 
 From adding new gems to updating your collection, BookWorm is your companion in the realm of literature. 
 Let the adventure begin as you turn the virtual pages of your personalized book haven with BookWorm! 🌐📖 
 #BookWorm #ReadingAdventure</p>
-    <img src="bookWorm.png" alt="Book Worm">
+    <img src="bookWorm.png" alt="Book Worm" class="w-32 h-32 mt-4 animate-wiggle">
 </body>
 </html>
