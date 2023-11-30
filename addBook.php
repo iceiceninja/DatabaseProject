@@ -14,8 +14,8 @@
     {
         echo "Failure to connect to Database\n";
     }
-    $sql = "INSERT INTO books (title, author, isbn, genre, copy, available, location) VALUES ('$title','$author'
-    ,'$isbn','$genre','$copy', '$available', '$location')";
+    // $sql = "INSERT INTO books (title, author, isbn, genre, copy, available, location) VALUES ('$title','$author'
+    // ,'$isbn','$genre','$copy', '$available', '$location')";
 
     $stmt = $conn->prepare("INSERT INTO books (title, author, isbn, genre, copy, available, location) 
     VALUES (?, ?, ?, ?, ?, ?, ?)");
