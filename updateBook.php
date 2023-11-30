@@ -14,19 +14,14 @@
     {
         echo "Failure to connect to Database\n";
     }
-    $sql = "UPDATE books 
-    SET title = '$title', author = '$author', genre = '$genre', copy = '$copy', available = '$available', location = '$location'
-    WHERE isbn = '$isbn'";
-
+   
     $stmt = $conn->prepare("UPDATE books 
     SET title = ?, author = ?, genre = ?, copy = ?, available = ?, location = ?
     WHERE isbn = ?");
     $stmt->bind_param("sssiiss", $title, $author, $genre,$copy,$available,$location,$isbn);
     $stmt->execute();
     $result=$stmt->get_result();
-    // $result = $conn->query($sql);
     if($result)
-    // if($stmt)
     {
         while($row = $result->fetch_assoc())
         {
