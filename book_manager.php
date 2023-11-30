@@ -110,16 +110,18 @@ input
   <div class="form-section">
     <h2> Search Book </h2>
     <form action="searchBook.php" method="post">
-        Title:    <input type="text" name="Title"><br>
+        Title*:    <input type="text" name="Title"><br>
         <input type="submit" value="Submit">
+    <br> *Leave blank for all books
+
     </form>
   </div>
-    <div class="form-section">
+    <!-- <div class="form-section">
     <h2> Show All Books </h2>
     <form action="searchBook.php" method="post">
         <input type="submit" value="Submit">
     </form>
-  </div>
+  </div> -->
 <br>
 <table class="result-table">
     <tr>
@@ -138,6 +140,13 @@ input
         $bookDetails = json_decode($bookDetailsJSON, true);
         foreach ($bookDetails as $book) 
         {
+          if($book['available'] == 1)
+          {
+            $book['available'] = "TRUE";
+          }else
+          {
+            $book['available'] = "FALSE";
+          }
           echo '<tr>
           <td>'. $book['title'] . '</td>
           <td>'. $book['author'] . '</td>

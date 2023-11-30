@@ -3,7 +3,13 @@
   <head>
     <title>Login</title>
       <link rel="stylesheet" href="styles.css">
-
+  <style>
+    input
+    {
+      background:green;
+      color: yellow;
+    }
+  </style>
   </head>
   <body>
     <?php
