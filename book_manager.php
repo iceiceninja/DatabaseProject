@@ -4,47 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-</head>
+    <link rel="stylesheet" href="styles.css">
+
 <style>
   .form-section{
     border: 1px solid black;
   }
-   a
-    {
-        text-decoration:none; 
-        background-color:lime;
-    }
-    a:hover
-    {
-        background:green;
-    }
-    #result-view
-    {
-      background-color: blue;
-      color:white;
-    }
+   
+   
     #update{
       border: 1px grey solid;
       background: grey;
       color: white;
     }
-    table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+    .result-table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: green;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+.result-table td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+.result-table tr:nth-child(even) {
+    background-color: darkgreen;
 }
+input
+{
+  background-color: green;
+  color: yellow;
+  margin: 7px;
+}
+
 </style>
+
+</head>
+
 <body>
+  
+  
+  <br>
+
+  <a href="home.php">Home</a>
+  <h1>Book Manager</h1>
   <div id="result-view">
     <?php
       if (isset($_GET['addSuccess']) && $_GET['addSuccess'] == 1) {
@@ -56,16 +63,12 @@ tr:nth-child(even) {
       if (isset($_GET['deleteSuccess']) && $_GET['deleteSuccess'] == 1) {
         echo 'Book has been DELETED!';
       }
-      if (isset($_GET['search_result'])) {
+      if (isset($_GET['search_result']) && $_GET['search_result'] != "null") {
         echo 'Search results at bottom of page!';
       }
   ?>
   </div>
-  
   <br>
-
-  <a href="home.php">Home</a>
-  <h1>Book Manager</h1>
   <div class="form-section">
     <h2> Add Book </h2>
     <form action="addBook.php" method="post">
@@ -118,7 +121,7 @@ tr:nth-child(even) {
     </form>
   </div>
 <br>
-<table>
+<table class="result-table">
     <tr>
       <th>Title</th>
       <th>Author</th>
@@ -129,7 +132,7 @@ tr:nth-child(even) {
       <th>Location</th>
     </tr>
     <?php
-    if (isset($_GET['search_result'])) 
+    if (isset($_GET['search_result']) && $_GET['search_result'] != "null") 
     {
        $bookDetailsJSON = urldecode($_GET['search_result']);
         $bookDetails = json_decode($bookDetailsJSON, true);

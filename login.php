@@ -2,9 +2,17 @@
 <html>
   <head>
     <title>Login</title>
+      <link rel="stylesheet" href="styles.css">
+
   </head>
   <body>
+    <?php
+      if (isset($_GET['authenticate']) && $_GET['authenticate'] == 0) {
+        echo '<p style="background:red; color: white;">User not found</p>';
+      }
+      ?>
     <h1>Login</h1>
+
     <form action="authenticate.php" method="post">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required /><br /><br />

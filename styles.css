@@ -1,0 +1,23 @@
+body {
+    background-color: darkgreen;
+    color: yellow;
+}
+
+a {
+    text-decoration: none;
+    background: green;
+    border: 1px solid black;
+    box-shadow: 1px 1px 6px black;
+    color: yellow;
+}
+
+a:hover {
+    background-color: lime;
+
+}
+
+#result-view {
+    background-color: green;
+    color: white;
+    box-shadow: 1px 1px 6px black;
+}

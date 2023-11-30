@@ -16,7 +16,8 @@
     }
    if (isset($_POST['Title']) && $_POST['Title'] !== null) {
     $title = $_POST['Title'];
-    $stmt = $conn->prepare("SELECT * FROM books WHERE title = ?");
+    $title = "%" . $title . "%";
+    $stmt = $conn->prepare("SELECT * FROM books WHERE title LIKE  ?");
     $stmt->bind_param("s", $title);
    }else
    {
@@ -36,18 +37,6 @@
     // Encode the array as a JSON string and include it in the URL
     $bookDetailsJSON = json_encode($bookDetails);
     header("Location: book_manager.php?search_result=" . urlencode($bookDetailsJSON));
-
-    // $result=$stmt->get_result();
-    // if($result)
-    // {
-    //     while($row = $result->fetch_assoc())
-    //     {
-    //         printf("Title: [%s], \n Author [%s], \n ISBN [%s]\n", 
-    //                 $row["Title"], $row["Author"], $row["ISBN"]);
-    //     }
-    //     $result->free();
-    // } 
-    // header("Location: book_manager.php?updateSuccess=1");
 
     $conn->close();
 ?>

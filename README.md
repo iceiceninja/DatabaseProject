@@ -17,4 +17,4 @@ PHP using XAMPP to run  mysql db and Apache webserver. The final project for cla
 - login.php: This should be the starting page that users are sent to. Once you log in it should take you to a home.php
 - book_manager.php: This file has forms for every operation of CRUD and a place to display output.
 - (CRUD OPERATION)Book.php: These files are the logic that makes the forms on book_manager.php work. Logic needs to be implemented
-- getData: example of how to connect to mySQL database and perform database operation. THIS IS UNSAFE AS IT DOES NOT USE PREPARED STATEMENTS! Currently not used by the website, but only there as reference if you need.
+- home.php: This is where you go after login. Gives you menu options to go to the book manager or to go to a user manager maybe?
